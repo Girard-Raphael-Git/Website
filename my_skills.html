@@ -14,6 +14,47 @@
         padding: 0;
         box-sizing: border-box;
     }
+
+    /* Set up basic styles for body */
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #0C1A2D;
+        color: white;
+        min-height: 100vh; /* Ensure body covers full height of viewport */
+        position: relative; /* Necessary for absolute positioning of footer */
+        background-size: cover;
+    }
+
+    /* Navigation styles */
+    .nav-item {
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 8px 16px;
+        border-radius: 30px;
+        margin-right: 8px;
+        transition: background-color 0.3s ease;
+    }
+
+    .nav-item:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Button styles */
+    .skills {
+        background-color: #ff5722;
+        padding: 8px 24px;
+        border-radius: 30px;
+        margin: 8px 0;
+        transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+        background-color: #e64a19;
+    }
+
+    /* Main section styles */
+    .text-center {
+        text-align: center;
+    }
     .hamburger {
     position: relative;
     width: 40px; /* Largeur du bouton hamburger */
@@ -69,48 +110,6 @@
         transition: opacity 0.3s linear;
     }
 
-    /* Set up basic styles for body */
-    body {
-        font-family: 'Poppins', sans-serif;
-        background-color: #0C1A2D;
-        color: white;
-        min-height: 100vh; /* Ensure body covers full height of viewport */
-        position: relative; /* Necessary for absolute positioning of footer */
-        background-image: url('./images/fond.jpg');
-        background-size: cover;
-    }
-
-    /* Navigation styles */
-    .nav-item {
-        background-color: rgba(255, 255, 255, 0.2);
-        padding: 8px 16px;
-        border-radius: 30px;
-        margin-right: 8px;
-        transition: background-color 0.3s ease;
-    }
-
-    .nav-item:hover {
-        background-color: rgba(255, 255, 255, 0.4);
-    }
-
-    /* Button styles */
-    .button {
-        background-color: #ff5722;
-        padding: 8px 24px;
-        border-radius: 30px;
-        margin: 8px 0;
-        transition: background-color 0.3s ease;
-    }
-
-    .button:hover {
-        background-color: #e64a19;
-    }
-
-    /* Main section styles */
-    .text-center {
-        text-align: center;
-    }
-
     /* Footer styles */
     footer {
         text-align: center;
@@ -130,6 +129,25 @@
         margin: 0 10px;
         text-decoration: none;
     }
+        .skill-item .stars {
+        display: inline-block;
+    }
+
+    .skill-item .stars::before {
+        content: '★★★★★';
+        letter-spacing: 3px;
+        background: linear-gradient(90deg, #ffd700 calc(var(--stars) / 5 * 100%), #c4c4c4 calc(var(--stars) / 5 * 100%));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 20px;
+    }
+
+    .skill-item .stars[data-stars="1"] { --stars: 1; }
+    .skill-item .stars[data-stars="2"] { --stars: 2; }
+    .skill-item .stars[data-stars="3"] { --stars: 3; }
+    .skill-item .stars[data-stars="4"] { --stars: 4; }
+    .skill-item .stars[data-stars="5"] { --stars: 5; }
+
 
     /* Animation for footer border */
     @keyframes border-animation {
@@ -166,15 +184,37 @@
         </header>
         <main>
             <section class="text-center">
-                <h1 class="text-5xl font-bold mb-4">Portfolio</h1>
-                <p class="mb-4">Exploring the universe of code, design, and creativity. Join me on a journey through the projects and ideas that have shaped my path.</p>
+                <h1 class="text-5xl font-bold mb-4">Skills</h1>
+                <p class="mb-4">Dans cette partie "Skills", vous pouvez connaître mes 4 compétences principales. Ces compétences sont réprésentatives de mon niveau général dans les domaines choisies</p>
                 <div class="flex justify-center items-center space-x-4 mt-8">
-                    <a href="#" class="button">Projects</a>
-                    <a href="#" class="button">About Me</a>
-                    <a href="#" class="button">Blog</a>
-                    <a href="#" class="button">Contact Me</a>
+                    <a href="#" class="skills">Networks</a>
+                    <a href="#" class="skills">Cybersecurity</a>
+                    <a href="#" class="skills">Development</a>
+                    <a href="#" class="skills">Telecommunications</a>
                 </div>
             </section>
+            <section class="skills-section text-center py-8">
+                <h2 class="text-4xl font-bold mb-6">Mes Compétences</h2>
+                <div class="skills-container mx-auto grid grid-cols-2 gap-4">
+                    <div class="skill-item mb-4">
+                        <h3 class="text-xl font-semibold">Réseaux</h3>
+                        <div class="stars" data-stars="4"></div> <!-- Changez la valeur de "data-stars" pour refléter votre niveau -->
+                    </div>
+                    <div class="skill-item mb-4">
+                        <h3 class="text-xl font-semibold">Télécommunications</h3>
+                        <div class="stars" data-stars="2"></div>
+                    </div>
+                    <div class="skill-item mb-4">
+                        <h3 class="text-xl font-semibold">Cybersécurité</h3>
+                        <div class="stars" data-stars="3"></div>
+                    </div>
+                    <div class="skill-item mb-4">
+                        <h3 class="text-xl font-semibold">Développement</h3>
+                        <div class="stars" data-stars="3"></div>
+                    </div>
+                </div>
+            </section>
+            
         </main>
         <footer>
             <div class="social-icons">
