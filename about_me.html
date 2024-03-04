@@ -134,12 +134,14 @@
     }
 
     .skill-item .stars::before {
-        content: '★★★★★';
-        letter-spacing: 3px;
-        background: linear-gradient(90deg, #ffd700 calc(var(--stars) / 5 * 100%), #c4c4c4 calc(var(--stars) / 5 * 100%));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 20px;
+    content: '★★★★★';
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, #ffd700 calc(var(--stars) / 5 * 100%), #c4c4c4 calc(var(--stars) / 5 * 100%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-size: 20px;
     }
 
     .skill-item .stars[data-stars="1"] { --stars: 1; }
