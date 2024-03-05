@@ -8,164 +8,135 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        /* Reset default margin and padding */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    /* Set up basic styles for body */
-    body {
-        font-family: 'Poppins', sans-serif;
-        background-color: #0C1A2D;
-        color: white;
-        min-height: 100vh; /* Ensure body covers full height of viewport */
-        position: relative; /* Necessary for absolute positioning of footer */
-        background-size: cover;
-    }
-
-    /* Navigation styles */
-    .nav-item {
-        background-color: rgba(255, 255, 255, 0.2);
-        padding: 8px 16px;
-        border-radius: 30px;
-        margin-right: 8px;
-        transition: background-color 0.3s ease;
-    }
-
-    .nav-item:hover {
-        background-color: rgba(255, 255, 255, 0.4);
-    }
-
-    /* Button styles */
-    .skills {
-        background-color: #ff5722;
-        padding: 8px 24px;
-        border-radius: 30px;
-        margin: 8px 0;
-        transition: background-color 0.3s ease;
-    }
-
-    .button:hover {
-        background-color: #e64a19;
-    }
-
-    /* Main section styles */
-    .text-center {
-        text-align: center;
-    }
-    .hamburger {
-    position: relative;
-    width: 40px; /* Largeur du bouton hamburger */
-    height: 30px; /* Hauteur du bouton hamburger */
-    background: none;
-    border: none;
-    cursor: pointer;
-    }
-
-    .bar {
-        position: absolute;
-        width: 100%;
-        height: 4px; /* Épaisseur des barres */
-        background-color: white;
-        transition: all 0.3s ease; /* Animation de transition */
-    }
-
-    .top {
-        top: 0;
-    }
-
-    .middle {
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .bottom {
-        bottom: 0;
-    }
-
-    .hamburger.active .top {
-        transform: translateY(12px) rotate(45deg);
-    }
-
-    .hamburger.active .middle {
-        opacity: 0;
-    }
-
-    .hamburger.active .bottom {
-        transform: translateY(-12px) rotate(-45deg);
-    }
-
-    /* Cacher/Afficher la navigation avec une transition */
-    #navigation.hidden {
-        visibility: hidden;
-        opacity: 0;
-        transition: visibility 0s 0.3s, opacity 0.3s linear;
-    }
-
-    #navigation:not(.hidden) {
-        visibility: visible;
-        opacity: 1;
-        transition: opacity 0.3s linear;
-    }
-
-    /* Footer styles */
-    footer {
-        text-align: center;
-        padding: 20px;
-        opacity: 0.6;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        border-top: 2px solid orange;
-        animation: border-animation 1s infinite alternate; /* Adding animation */
-    }
-
-    /* Social icon styles */
-    .social-icons a {
-        color: white;
-        margin: 0 10px;
-        text-decoration: none;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0C1A2D;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-image: url('./images/fond.jpg');
+            background-size: cover;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            flex: 1;
+        }
+        header {
+            flex-shrink: 0;
+        }
+        main {
+            flex: 1;
+        }
+        .nav-item {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 30px;
+            margin-right: 8px;
+            transition: background-color 0.3s ease;
+            color: white;
+            text-decoration: none;
+        }
+        .nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+        .skills {
+            background-color: #ff5722;
+            padding: 8px 24px;
+            border-radius: 30px;
+            margin: 8px 0;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+        .skills:hover {
+            background-color: #e64a19;
+        }
+        .hamburger {
+            position: relative;
+            width: 40px;
+            height: 30px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .bar {
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+        .top {
+            top: 0;
+        }
+        .middle {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .bottom {
+            bottom: 0;
+        }
+        .hamburger.active .top {
+            transform: translateY(12px) rotate(45deg);
+        }
+        .hamburger.active .middle {
+            opacity: 0;
+        }
+        .hamburger.active .bottom {
+            transform: translateY(-12px) rotate(-45deg);
+        }
+        #navigation.hidden {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s 0.3s, opacity 0.3s linear;
+        }
+        #navigation:not(.hidden) {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 0.3s linear;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            opacity: 0.6;
+            margin-top: auto;
+            border-top: 2px solid orange;
+            background: #0C1A2D; /* Or any other color */
+        }
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
         .skill-item .stars {
-        display: inline-block;
-    }
-
-    .skill-item .stars::before {
-    content: '★★★★★';
-    letter-spacing: 3px;
-    background: linear-gradient(90deg, #ffd700 calc(var(--stars) / 5 * 100%), #c4c4c4 calc(var(--stars) / 5 * 100%));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    font-size: 20px;
-    }
-
-    .skill-item .stars[data-stars="1"] { --stars: 1; }
-    .skill-item .stars[data-stars="2"] { --stars: 2; }
-    .skill-item .stars[data-stars="3"] { --stars: 3; }
-    .skill-item .stars[data-stars="4"] { --stars: 4; }
-    .skill-item .stars[data-stars="5"] { --stars: 5; }
-
-
-    /* Animation for footer border */
-    @keyframes border-animation {
-        from {
-            border-top-width: 2px;
+            display: inline-block;
         }
-        to {
-            border-top-width: 6px;
+        .skill-item .stars::before {
+            content: '★★★★★';
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, #ffd700 calc(var(--stars) / 5 * 100%), #c4c4c4 calc(var(--stars) / 5 * 100%));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            font-size: 20px;
         }
-    }
-
+        .skill-item .stars[data-stars="1"] { --stars: 1; }
+        .skill-item .stars[data-stars="2"] { --stars: 2; }
+        .skill-item .stars[data-stars="3"] { --stars: 3; }
+        .skill-item .stars[data-stars="4"] { --stars: 4; }
+        .skill-item .stars[data-stars="5"] { --stars: 5; }
     </style>
 </head>
 <body>
-    <div class="container mx-auto px-4">
-       <body>
     <div class="container mx-auto px-4">
         <header class="flex justify-between items-center py-8">
             <button id="hamburger" class="hamburger" aria-label="Menu" aria-controls="navigation">
@@ -173,50 +144,52 @@
                 <div class="bar middle"></div>
                 <div class="bar bottom"></div>
             </button>
-                <nav id="navigation" class="hidden flex-col space-y-4">
-                    <a href="index.html" class="nav-item">Accueil</a>
-                    <a href="projets.html" class="nav-item">Projets</a>
-                    <a href="about_me.html" class="nav-item">About me</a>
-                    <a href="my_skills.html" class="nav-item">My skills</a>
-                    <a href="mon_parcours.html" class="nav-item">Mon parcours</a>
-                    <a href="contact.html" class="nav-item">Contact</a>
-                    <a href="mentions_legales.html" class="nav-item">Mentions légales</a>
-                    <a href="aspects_techniques.html" class="nav-item">Aspects Techniques</a>
-                </nav>
+            <nav id="navigation" class="hidden flex-col space-y-4">
+                <a href="index.html" class="nav-item">Accueil</a>
+                <a href="projets.html" class="nav-item">Projets</a>
+                <a href="about_me.html" class="nav-item">About me</a>
+                <a href="my_skills.html" class="nav-item">My skills</a>
+                <a href="mon_parcours.html" class="nav-item">Mon parcours</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+                <a href="mentions_legales.html" class="nav-item">Mentions légales</a>
+                <a href="aspects_techniques.html" class="nav-item">Aspects Techniques</a>
+            </nav>
         </header>
         <main>
             <section class="text-center">
-                <h1 class="text-5xl font-bold mb-4">Skills</h1>
-                <p class="mb-4">Dans cette partie "Skills", vous pouvez connaître mes 4 compétences principales. Ces compétences sont réprésentatives de mon niveau général dans les domaines choisies</p>
+                <h1 class="text-5xl font-bold mb-4">Projets</h1>
+                <p class="mb-4">Dans cette partie "Projets", on s'intéressera aux projets important que j'ai pu mener au sein d'établissements scolaires ou lors de mon temps libre..</p>
                 <div class="flex justify-center items-center space-x-4 mt-8">
-                    <a href="#" class="skills">Networks</a>
-                    <a href="#" class="skills">Cybersecurity</a>
-                    <a href="#" class="skills">Development</a>
-                    <a href="#" class="skills">Telecommunications</a>
+                    <a href="#" class="skills">SAE14</a>
+                    <a href="#" class="skills">VPN OpenVpn</a>
+                    <a href="#" class="skills">SAE31</a>
+                    <a href="#" class="skills">Site personnel</a>
                 </div>
             </section>
-            <section class="skills-section text-center py-8">
-                <h2 class="text-4xl font-bold mb-6">Mes Compétences</h2>
-                <div class="skills-container mx-auto grid grid-cols-2 gap-4">
-                    <div class="skill-item mb-4">
-                        <h3 class="text-xl font-semibold">Réseaux</h3>
-                        <div class="stars" data-stars="4"></div> <!-- Changez la valeur de "data-stars" pour refléter votre niveau -->
+            <section class="projects py-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="project">
+                        <h2 class="text-3xl font-bold mb-3">SAE14</h2>
+                        <p class="mb-3">Description du projet SAE14 : [Insérez votre description ici]. Ce projet a impliqué des compétences en [technologies utilisées], et a été réalisé dans le cadre de [contexte].</p>
+                        <a href="#" class="skills">En savoir plus</a>
                     </div>
-                    <div class="skill-item mb-4">
-                        <h3 class="text-xl font-semibold">Télécommunications</h3>
-                        <div class="stars" data-stars="2"></div>
+                    <div class="project">
+                        <h2 class="text-3xl font-bold mb-3">VPN OpenVpn</h2>
+                        <p class="mb-3">Description du projet VPN OpenVpn : [Insérez votre description ici]. Ce projet visait à [objectif du projet], en utilisant [technologies utilisées].</p>
+                        <a href="#" class="skills">En savoir plus</a>
                     </div>
-                    <div class="skill-item mb-4">
-                        <h3 class="text-xl font-semibold">Cybersécurité</h3>
-                        <div class="stars" data-stars="3"></div>
+                    <div class="project">
+                        <h2 class="text-3xl font-bold mb-3">SAE31</h2>
+                        <p class="mb-3">Description du projet SAE31 : [Insérez votre description ici]. Les principaux défis étaient [défis rencontrés] et le projet a contribué à [ce que le projet a accompli].</p>
+                        <a href="#" class="skills">En savoir plus</a>
                     </div>
-                    <div class="skill-item mb-4">
-                        <h3 class="text-xl font-semibold">Développement</h3>
-                        <div class="stars" data-stars="3"></div>
+                    <div class="project">
+                        <h2 class="text-3xl font-bold mb-3">Site personnel</h2>
+                        <p class="mb-3">Description de mon site personnel : [Insérez votre description ici]. Ce site a été développé comme une plateforme pour [objectif du site], en utilisant [technologies utilisées].</p>
+                        <a href="#" class="skills">En savoir plus</a>
                     </div>
                 </div>
             </section>
-            
         </main>
         <footer>
             <div class="social-icons">
@@ -227,16 +200,16 @@
             <p>© 2024 My Portfolio. All rights reserved.</p>
         </footer>
     </div>
-</body>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var hamburger = document.getElementById('hamburger');
-        var navigation = document.getElementById('navigation');
-        
-        hamburger.addEventListener('click', function () {
-            navigation.classList.toggle('hidden');
-            hamburger.classList.toggle('active'); // Basculer la classe "active" pour animer les barres
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var hamburger = document.getElementById('hamburger');
+            var navigation = document.getElementById('navigation');
+            
+            hamburger.addEventListener('click', function () {
+                navigation.classList.toggle('hidden');
+                hamburger.classList.toggle('active');
+            });
         });
-    });
-</script>
+    </script>
+</body>
 </html>
